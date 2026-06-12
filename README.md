@@ -1,39 +1,38 @@
 # 🌍 Global Economic Indicators Analysis
 
-This project explores how key macroeconomic indicators such as inflation, interest rates, GDP per capita, unemployment and income inequality relate to one another across countries, and what those relationships mean for financial market stakeholders. Using World Bank data covering 2000 to 2023, a window chosen to capture the Dot-Com Bubble, the 2008 Financial Crisis, the Eurozone Debt Crisis and COVID-19, I cleaned and restructured the raw data in pandas, then analysed it through a correlation heatmap, a pre- versus post-COVID GDP comparison, and an interactive radar chart comparing China and the US.
+An analysis of how macroeconomic indicators such as inflation, interest rates, GDP per capita, unemployment and income inequality relate to one another across countries, using World Bank data from 2000 to 2023. The window deliberately spans the Dot-Com Bubble, the 2008 Financial Crisis, the Eurozone Debt Crisis and COVID-19, so the data captures how economies respond to shocks.
+
+<p align="center"><img src="images/correlation_heatmap.png" width="620"></p>
+
+**Key results**
+
+- Global indicators are only weakly correlated: the strongest links were inequality with unemployment (+0.26) and interest rates inversely with inflation (-0.21)
+- GDP per capita barely predicted inequality (+0.18) or unemployment (+0.04), so wealth alone says little about economic structure
+- The COVID recovery was uneven: China and the US recorded the largest GDP per capita gains while Germany and Japan lagged
 
 📄 **Full analysis, figures and references:** [Economic_Indicators_Report.pdf](Economic_Indicators_Report.pdf)
 
-## 📦 Technologies
+## Why this project
 
-- `Python` and `pandas`
-- `Matplotlib`, `Seaborn`, `Plotly`
-- `Jupyter Notebook`
+Investors, governments and institutions all rely on these indicators to make decisions, and I wanted to test how much they actually move together across countries rather than assuming textbook relationships hold globally. The most interesting finding was how weakly most indicators correlate at a global level: GDP per capita barely predicted inequality or unemployment, while the strongest links (inequality with unemployment, interest rates inversely with inflation) were modest at best. The pre- versus post-COVID comparison also showed a genuinely uneven recovery, with China and the US pulling ahead while developed economies like Germany and Japan lagged. It was a useful reminder that global averages hide more than they reveal, and that country-level analysis matters for anyone allocating capital.
 
-## 📚 What I Learned
+## Method
 
-**Global indicators are only weakly linked.** Most indicators showed weak linear relationships globally: inequality and unemployment were moderately correlated (+0.26), interest and inflation slightly negatively (-0.21), while GDP per capita barely correlated with anything. Wealth alone does not predict inequality or labour conditions, which is exactly why country-level analysis matters.
+I sourced the data from World Bank Open Data after rejecting smaller datasets with inconsistent timeframes, cleaned it in pandas (converting placeholder values to NaNs and imputing with medians rather than means, since medians resist extreme values), and reshaped it from long to wide format so each country-year became a row and each indicator a column. I then analysed the data through a Pearson correlation heatmap, a pre/post-COVID GDP per capita comparison across the top 20 countries, and an interactive Plotly radar chart comparing the economic profiles of China and the US.
 
-**The COVID recovery was uneven.** China and the US recorded the largest GDP per capita gains while developed economies like Germany and Japan lagged, a shifting landscape that matters for investor confidence and asset allocation.
+## Skills used
 
-**Data work is most of the work.** The majority of the project was sourcing, cleaning and reshaping data: choosing median over mean imputation, and pivoting from long to wide format so each country-year became a row. Those decisions shaped every downstream result more than the charts did.
+- **Data wrangling in pandas**: cleaning, imputation strategy, melt/pivot reshaping of a real-world dataset
+- **Exploratory data analysis**: correlation analysis, cross-sectional and longitudinal comparison
+- **Visualisation**: heatmaps (Seaborn), comparative bar charts (Matplotlib), interactive radar charts (Plotly)
+- **Economic interpretation**: connecting statistical patterns to monetary policy, labour markets and investor behaviour
+- **Research judgement**: evaluating and rejecting unsuitable data sources, documenting decisions in a written report
 
-## 💬 How can it be improved?
-
-- Add statistical testing rather than relying on visual correlation alone
-- Automate data retrieval through the World Bank API instead of a static CSV
-- Export the interactive Plotly chart as a static image, since it does not render in GitHub's notebook preview
+The workflow mirrors the day-to-day of an analytics or research role: take messy public data, make defensible cleaning decisions, and turn it into insights a stakeholder can act on.
 
 ## 🔌 Running the Project
 
-1. Clone the repository and install dependencies: `pip install pandas matplotlib seaborn plotly`
-2. Open the notebook:
-
-```bash
-jupyter notebook economic_indicators_analysis.ipynb
-```
-
-The notebook reads `Economic_Indicators.csv`, which is included in the repository.
+Install dependencies with `pip install pandas matplotlib seaborn plotly`, then open `economic_indicators_analysis.ipynb` in Jupyter. The notebook reads `Economic_Indicators.csv`, included in the repository. Note the Plotly chart is interactive and does not render in GitHub's preview.
 
 ## 🙏 Acknowledgments
 
