@@ -1,4 +1,4 @@
-# 🌍 Global Economic Indicators Analysis
+# Global Economic Indicators Analysis
 
 An analysis of how macroeconomic indicators such as inflation, interest rates, GDP per capita, unemployment and income inequality relate to one another across countries, using World Bank data from 2000 to 2023. The window deliberately spans the Dot-Com Bubble, the 2008 Financial Crisis, the Eurozone Debt Crisis and COVID-19, so the data captures how economies respond to shocks.
 
@@ -10,7 +10,7 @@ An analysis of how macroeconomic indicators such as inflation, interest rates, G
 - GDP per capita barely predicted inequality (+0.18) or unemployment (+0.04), so wealth alone says little about economic structure
 - The COVID recovery was uneven: China and the US recorded the largest GDP per capita gains while Germany and Japan lagged
 
-📄 **Full analysis, figures and references:** [Economic_Indicators_Report.pdf](Economic_Indicators_Report.pdf)
+**Full analysis, figures and references:** [Economic_Indicators_Report.pdf](Economic_Indicators_Report.pdf)
 
 ## Why this project
 
@@ -30,10 +30,10 @@ I sourced the data from World Bank Open Data after rejecting smaller datasets wi
 
 The workflow mirrors the day-to-day of an analytics or research role: take messy public data, make defensible cleaning decisions, and turn it into insights a stakeholder can act on.
 
-## 🔌 Running the Project
+## Running the Project
 
 Install dependencies with `pip install pandas matplotlib seaborn plotly`, then open `economic_indicators_analysis.ipynb` in Jupyter. The notebook reads `Economic_Indicators.csv`, included in the repository. Note the Plotly chart is interactive and does not render in GitHub's preview.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 Data sourced from [World Bank Open Data](https://data.worldbank.org/). The cleaning and visualisation approach drew on W3Schools, Stack Overflow, Plotly documentation, and analysis notebooks by Zabihullah18 and A. Mulla; full references are in the [report](Economic_Indicators_Report.pdf).
